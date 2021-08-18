@@ -8,17 +8,25 @@ btns.forEach(function(btn){
         const obj = o.currentTarget.classList;
         if(obj.contains('decrease')){
             count--;
-            count_value.style.color="red";
         }
         if(obj.contains('reset')){
             count=0;
-            count_value.style.color="black";
         }
         if(obj.contains('increase')){
             count++;            
+        }
+
+        if(count>0){
             count_value.style.color="green";
         }
 
+        if(count==0){
+            count_value.style.color="black";
+        }
+
+        if(count<0){
+            count_value.style.color="red";
+        }
         
         count_value.textContent=count;
     });
